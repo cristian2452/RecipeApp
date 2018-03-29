@@ -1,6 +1,7 @@
 package com.atempa.mvp.dam2018_02_recyclerview;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,13 +56,22 @@ public class RecipeAdapter extends BaseAdapter {
         ImageView thumbnailImageView =
                 (ImageView) rowView.findViewById(R.id.recipe_list_thumbnail);
 
-        // 1
         Recipe recipe = (Recipe) getItem(position);
         titleTextView.setText(recipe.title);
         subtitleTextView.setText(recipe.description);
         detailTextView.setText(recipe.label);
         Picasso.get()
                .load(recipe.imageUrl).placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+
+        Typeface titleTypeFace = Typeface.createFromAsset(mContext.getAssets(), "fonts/JosefinSans-Bold.ttf");
+        titleTextView.setTypeface(titleTypeFace);
+
+        Typeface subtitleTypeFace =
+                Typeface.createFromAsset(mContext.getAssets(), "fonts/JosefinSans-SemiBoldItalic.ttf");
+        subtitleTextView.setTypeface(subtitleTypeFace);
+
+        Typeface detailTypeFace = Typeface.createFromAsset(mContext.getAssets(), "fonts/Quicksand-Bold.otf");
+        detailTextView.setTypeface(detailTypeFace);
 
         return rowView;
     }
