@@ -19,14 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         final ArrayList<Recipe> recipeList = Recipe.getRecipesFromFile("recipes.json", this);
 
-        String[] listItems = new String[recipeList.size()];
-
-        for(int i = 0; i < recipeList.size(); i++){
-            Recipe recipe = recipeList.get(i);
-            listItems[i] = recipe.title;
-        }
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems);
+        RecipeAdapter adapter = new RecipeAdapter(this, recipeList);
         mListView.setAdapter(adapter);
     }
 }
