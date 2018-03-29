@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DAM2018_02_RecyclerVIew</string>
+    <string name="thumbnail">thumbnail</string>
 </resources>
