@@ -11,14 +11,13 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mListView = (ListView) findViewById(R.id.recipe_list_view);
+        ListView mListView = findViewById(R.id.recipe_list_view);
 
         final ArrayList<Recipe> recipeList = Recipe.getRecipesFromFile("recipes.json", this);
 
@@ -36,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent detailIntent = new Intent(context, RecipeDetailActivity.class);
                 // 3
                 detailIntent.putExtra("title", selectedRecipe.title);
+                detailIntent.putExtra("description", selectedRecipe.description);
+                detailIntent.putExtra("imageUrl", selectedRecipe.imageUrl);
                 detailIntent.putExtra("url", selectedRecipe.instructionUrl);
                 // 4
                 startActivity(detailIntent);

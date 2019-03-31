@@ -55,22 +55,19 @@ public class RecipeAdapter extends BaseAdapter {
         // Get view for row item
         View rowView = mInflater.inflate(R.layout.list_item_recipe, parent, false);
         // Get title element
-        TextView titleTextView =
-                (TextView) rowView.findViewById(R.id.recipe_list_title);
+        TextView titleTextView = rowView.findViewById(R.id.recipe_list_title);
         // Get subtitle element
-        TextView subtitleTextView =
-                (TextView) rowView.findViewById(R.id.recipe_list_subtitle);
+        TextView subtitleTextView = rowView.findViewById(R.id.recipe_list_subtitle);
         // Get detail element
-        TextView detailTextView =
-                (TextView) rowView.findViewById(R.id.recipe_list_detail);
+        TextView detailTextView = rowView.findViewById(R.id.recipe_list_detail);
         // Get thumbnail element
-        ImageView thumbnailImageView =
-                (ImageView) rowView.findViewById(R.id.recipe_list_thumbnail);
+        ImageView thumbnailImageView = rowView.findViewById(R.id.recipe_list_thumbnail);
 
         Recipe recipe = (Recipe) getItem(position);
         titleTextView.setText(recipe.title);
         subtitleTextView.setText(recipe.description);
         detailTextView.setText(recipe.label);
+
         Picasso.get()
                .load(recipe.imageUrl).placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
 
