@@ -2,7 +2,6 @@ package com.atempa.mvp.dam2018_02_recyclerview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,7 +10,6 @@ import com.squareup.picasso.Picasso;
 public class RecipeDetailActivity extends AppCompatActivity {
     private TextView mTitle, mDescription;
     private ImageView mImageUrl;
-    private WebView mWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +23,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
         // 2
         setTitle(title);
         // 3
-        mTitle = findViewById(R.id.txt_title);
         mDescription = findViewById(R.id.txt_description);
         mImageUrl = findViewById(R.id.picture);
-        mWebView = findViewById(R.id.wv_detail);
-        // 4
-        mWebView.loadUrl(url);
 
-        mTitle.setText(title);
+
         mDescription.setText(description);
 
         Picasso.get()
