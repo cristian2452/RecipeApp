@@ -8,8 +8,6 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 public class RecipeDetailActivity extends AppCompatActivity {
-    private TextView mTitle, mDescription;
-    private ImageView mImageUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +21,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
         // 2
         setTitle(title);
         // 3
-        mDescription = findViewById(R.id.txt_description);
-        mImageUrl = findViewById(R.id.picture);
+        TextView mDescription = findViewById(R.id.txt_description);
+        ImageView mImageUrl = findViewById(R.id.picture);
 
 
         mDescription.setText(description);
